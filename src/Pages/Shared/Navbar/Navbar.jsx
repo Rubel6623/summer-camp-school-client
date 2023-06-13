@@ -17,10 +17,11 @@ const Navbar = () => {
   // }
 
   const navItems=<>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/menu'>Our Menu</Link></li>
-        <li><Link to='/order/salad'>Order Food</Link></li>
-        <li><Link to='/secret'>Secret</Link></li>
+        
+        <li><Link to='/' className="">Home</Link></li>
+        <li><Link to='/menu'>Instructors</Link></li>
+        <li><Link to='/order/salad'>Classes</Link></li>
+        <li><Link to='/secret'>Dashboard</Link></li>
         <li>
           {/* <Link to='/dashboard/mycart'>
           <div className="indicator">
@@ -34,7 +35,7 @@ const Navbar = () => {
         
   </>
   return (
-    <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white  max-w-screen-xl">
+    <div className="navbar z-10 bg-opacity-30 bg-slate-400 max-w-screen-2xl">
       <div className="navbar-start">
 
         <div className="dropdown">
@@ -56,7 +57,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-lg font-semibold"
           >
             {navItems}
           </ul>
@@ -66,7 +67,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 text-lg font-semibold">
           {navItems}
         </ul>
       </div>
@@ -76,7 +77,7 @@ const Navbar = () => {
           user ? <>
           <button  className="btn btn-ghost">Log Out</button>
           </>:<>
-          <Link to='/login'>Login</Link>
+          <Link to='/login' className="text-lg font-semibold">Login</Link>
           </>
         }
       </div>
