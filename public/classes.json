@@ -3,9 +3,9 @@
     "_id": "642c155b2c4774f05c36eeaa",
     "className": "Piano Class",
     "classImage": "https://songbook.qodeinteractive.com/wp-content/uploads/2020/04/class-img-3.jpg",
-    "instructorName": "John Doe",
+    "instructorName": "SHARON HAYES",
     "instructorEmail": "johndoe@example.com",
-    "instructorImage": "https://songbook.qodeinteractive.com/wp-content/uploads/2020/04/team-img-1.jpg",
+    "instructorImage": "https://songbook.qodeinteractive.com/wp-content/uploads/2020/05/team-7.jpg",
     "availableSeats": 30,
     "coursePrice": "$50/hour",
     "numberOfStudents": 25,
@@ -61,7 +61,7 @@
     "Experience": "8 years+",
     "Instument": "Drums",
     "Education": "Music School of Music Arts",
-    "teachersCategory":"Trumpet Teacher"
+    "teachersCategory":"Drum Teacher"
   },
   {
     "_id": "642c155b2c4774f05c36ee7a",
@@ -78,5 +78,37 @@
     "Instument": "Saxophone",
     "Education": "Music School of Music Arts",
     "teachersCategory":"Saxophone Teacher"
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee9c",
+    "className": "Trumpet Class",
+    "classImage": "https://www.musicalhow.com/wp-content/uploads/featured-types-trumpets.jpg",
+    "instructorName": "ANNA THOMPSON",
+    "instructorEmail": "deborah@example.com",
+    "instructorImage": "https://songbook.qodeinteractive.com/wp-content/uploads/2020/04/team-img-2.jpg",
+    "availableSeats": 20,
+    "coursePrice": "$45/hour",
+    "numberOfStudents": 15,
+    "courseDetails": "Learn to play the saxophone with precision and style under the guidance of an accomplished saxophonist.",
+    "Experience": "11 years+",
+    "Instument": "Trumpet",
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Trumpet Teacher"
+  },
+  {
+    "_id": "642c155b2c4774f05c36ee9d",
+    "className": "Tabla Class",
+    "classImage": "https://peacemusicacademy.com/wp-content/uploads/2021/05/online-tabla-classes-min.jpeg",
+    "instructorName": "John Doe",
+    "instructorEmail": "michaeldavis@example.com",
+    "instructorImage": "https://songbook.qodeinteractive.com/wp-content/uploads/2020/04/team-img-1.jpg",
+    "availableSeats": 12,
+    "coursePrice": "$45/hour",
+    "numberOfStudents": 13,
+    "courseDetails": "Learn to play the saxophone with precision and style under the guidance of an accomplished saxophonist.",
+    "Experience": "11 years+",
+    "Instument": "Tabla",
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Tabla Teacher"
   }
 ]

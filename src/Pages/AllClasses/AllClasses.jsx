@@ -18,7 +18,7 @@ const AllClasses = () => {
     <thead>
       <tr>
         <th>#</th>
-        <th>Name</th>
+        <th>Class Name</th>
         <th>Instructor name</th>
         <th>Available seats</th>
         <th>Price</th>
