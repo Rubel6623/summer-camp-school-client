@@ -21,6 +21,7 @@ const Navbar = () => {
         <li><Link to='/instructor'>Instructors</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
         <li><Link to='/secret'>Dashboard</Link></li>
+        <li><Link to='/app'>My App</Link></li>
         <li>
           {/* <Link to='/dashboard/mycart'>
           <div className="indicator">

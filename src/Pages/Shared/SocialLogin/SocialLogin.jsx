@@ -1,4 +1,4 @@
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
@@ -39,9 +39,7 @@ const SocialLogin = () => {
         <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
           <FaGoogle></FaGoogle>
         </button>
-        <button className="btn btn-circle btn-outline ml-5">
-          <FaFacebook></FaFacebook>
-        </button>
+
       </div>
     </div>
   );
