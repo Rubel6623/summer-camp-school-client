@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import useClasses from "../../hooks/useClasses";
 
 const Instructors = () => {
-  const [instructors,setInstructors]=useState([]);
-  useEffect(()=>{
-    fetch('classes.json')
-    .then(res=>res.json())
-    .then(data=>setInstructors(data))
-  },[])
+  const [classes]=useClasses();
 
   return (
     <div>
@@ -31,7 +26,7 @@ const Instructors = () => {
       </div>
       <div className="grid md:grid-cols-3 gap-4 mt-12">
         {
-          instructors.map(instructor=><div key={instructor._id} className="card w-96 bg-base-100 shadow-xl">
+          classes.map(instructor=><div key={instructor._id} className="card w-96 bg-base-100 shadow-xl">
           <figure><img src={instructor.instructorImage} alt="Shoes" /></figure>
           <div className="card-body">
             <h2 className="card-title">{instructor.instructorName}</h2>

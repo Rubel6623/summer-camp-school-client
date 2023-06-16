@@ -1,17 +1,11 @@
-import { useEffect, useState } from "react";
+
 import SectionTitle from "../../../Components/SectionTitle";
+import useClasses from "../../../hooks/useClasses";
 
 
 const PopularClasses = () => {
-  const [classes,setClasses]=useState([]);
-  useEffect(()=>{
-    fetch('classes.json')
-    .then(res=>res.json())
-    .then(data=>{
-      const popularClasses=data.filter(pClass=>pClass.numberOfStudents>15);
-      setClasses(popularClasses);
-    })
-  },[])
+  const [classes]=useClasses();
+  
   console.log(classes);
   return (
     <div>
