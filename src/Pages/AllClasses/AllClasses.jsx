@@ -1,9 +1,63 @@
 import { Helmet } from "react-helmet-async";
 import useClasses from "../../hooks/useClasses";
+import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const AllClasses = () => {
   const [classes]=useClasses();
+  const {user}=useAuth();
+  const navigate=useNavigate();
+  const location=useLocation();
+
+  const handleSelect=(selectedClass)=>{
+    console.log(selectedClass);
+
+    if(user && user.email){
+      const selectClass={
+        classId:selectedClass._id,
+        className:selectedClass.className,
+        classImage:selectedClass.classImage,
+        coursePrice:selectedClass.coursePrice,
+        email:user.email
+      }
+      fetch('http://localhost:5000/myClasses',{
+        method:'POST',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify(selectClass)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        if(data.insertedId){
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Class added on the cart',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+    }
+    else{
+      Swal.fire({
+        title: 'Please login to order the food',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Login now!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login', {state:{from:location}})
+        }
+      })
+    }
+  }
+
   return (
     <div className="w-full">
       <Helmet>
@@ -28,32 +82,32 @@ const AllClasses = () => {
     <tbody>
       {/* row 1 */}
       {
-        classes.map((allClass,index)=><tr key={allClass._id}
-        style={{backgroundColor:allClass.availableSeats==0?'#ffc2c2':''}}
+        classes.map((sClass,index)=><tr key={sClass._id}
+        style={{backgroundColor:sClass.availableSeats==0?'#ffc2c2':''}}
         >
           <th>{index+1}</th>
           <td>
             <div className="flex items-center space-x-3">
               <div className="avatar">
                 <div className="mask mask-squircle w-12 h-12">
-                  <img src={allClass.classImage}/>
+                  <img src={sClass.classImage}/>
                 </div>
               </div>
               <div>
-                <div className="font-bold">{allClass.className}</div>
+                <div className="font-bold">{sClass.className}</div>
               </div>
             </div>
           </td>
   
           <td>
-            {allClass.instructorName}
+            {sClass.instructorName}
           </td>
   
-          <td>{allClass.availableSeats}</td>
-          <td>{allClass.coursePrice}</td>
+          <td>{sClass.availableSeats}</td>
+          <td>{sClass.coursePrice}</td>
   
           <th>
-            {allClass.availableSeats==0?<button disabled className="btn btn-outline btn-ghost btn-sm">Select</button>:<button className="btn btn-outline btn-success btn-sm">Select</button>}
+            {sClass.availableSeats==0?<button disabled className="btn btn-outline btn-ghost btn-sm">Select</button>:<button onClick={()=>handleSelect(sClass)} className="btn btn-outline btn-success btn-sm">Select</button>}
           </th>
   
         </tr>)

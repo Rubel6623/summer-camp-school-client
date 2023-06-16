@@ -1,12 +1,18 @@
 
+import { useNavigate } from "react-router-dom";
 import SectionTitle from "../../../Components/SectionTitle";
 import useClasses from "../../../hooks/useClasses";
 
 
 const PopularClasses = () => {
   const [classes]=useClasses();
-  
-  console.log(classes);
+    console.log(classes);
+    const navigate=useNavigate();
+
+    const handleSelect=()=>{
+      navigate('/classes')
+    }
+
   return (
     <div>
       <SectionTitle subHeading={'Latest Updates'} heading={'Popular Classes'}></SectionTitle>
@@ -18,7 +24,7 @@ const PopularClasses = () => {
             <h2 className="card-title">{pClass.className}</h2>
             <p>{pClass.courseDetails}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Enroll Now</button>
+              <button onClick={handleSelect} className="btn btn-primary">select Class</button>
             </div>
           </div>
         </div>)
