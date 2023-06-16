@@ -13,7 +13,7 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch("reviews.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -31,7 +31,7 @@ const Review = () => {
           <SwiperSlide key={review._id}>
 
             <div className="flex items-center gap-6 mx-24 my-16 bg-red-100 bg-opacity-40 p-8 rounded-lg">
-              <img className="w-40 h-40 rounded-full" src={review.image} alt="" />
+              <img className="w-40 h-40 rounded-full" src={review?.image} alt="" />
 
               <div>
               <h3 className="text-2xl text-orange-500">{review.name}</h3>
