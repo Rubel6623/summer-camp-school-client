@@ -12,7 +12,8 @@
     "courseDetails": "Learn to play the piano with professional guidance in a relaxed and friendly environment.",
     "Experience": "14 years+",
     "Instument": "Piano",
-    "Education": "Music School of Music Arts"
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Piano Teacher"
   },
   {
     "_id": "642c155b2c4774f05c36eeb9",
@@ -27,7 +28,8 @@
     "courseDetails": "Discover the joy of playing the guitar with personalized lessons tailored to your skill level.",
     "Experience": "12 years+",
     "Instument": "Guitar",
-    "Education": "Music School of Music Arts"
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Guitar Teacher"
   },
   {
     "_id": "642c155b2c4774f05c36ee7c",
@@ -42,7 +44,8 @@
     "courseDetails": "Experience the beauty of the violin through expert instruction and an immersive learning experience.",
     "Experience": "7 years+",
     "Instument": "Violin",
-    "Education": "Music School of Music Arts"
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Violin Teacher"
   },
   {
     "_id": "642c155b2c4774f05c36ee88",
@@ -57,7 +60,8 @@
     "courseDetails": "Unleash your rhythm and master the drums in a dynamic and supportive setting.",
     "Experience": "8 years+",
     "Instument": "Drums",
-    "Education": "Music School of Music Arts"
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Trumpet Teacher"
   },
   {
     "_id": "642c155b2c4774f05c36ee7a",
@@ -72,6 +76,7 @@
     "courseDetails": "Learn to play the saxophone with precision and style under the guidance of an accomplished saxophonist.",
     "Experience": "11 years+",
     "Instument": "Saxophone",
-    "Education": "Music School of Music Arts"
+    "Education": "Music School of Music Arts",
+    "teachersCategory":"Saxophone Teacher"
   }
 ]
