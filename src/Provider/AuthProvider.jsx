@@ -38,6 +38,10 @@ const AuthProvider = ({children}) => {
     return updateProfile(auth.currentUser,{displayName:name,photoURL:photo});
   }
 
+  const deleteUser=()=>{
+    return user.delete();
+  }
+
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,currentUser=>{
       setUser(currentUser);
@@ -47,7 +51,6 @@ const AuthProvider = ({children}) => {
       if(currentUser){
         axios.post('http://localhost:5000/jwt',{email:currentUser.email})
         .then(data=>{
-          // console.log(data.data.token)
           localStorage.setItem('access-token', data.data.token)
           setLoading(false);
         })
@@ -69,7 +72,8 @@ const AuthProvider = ({children}) => {
     signIn,
     logOut,
     updateUserProfile,
-    googleSignIn
+    googleSignIn,
+    deleteUser
   }
 
   return (

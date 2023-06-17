@@ -42,7 +42,7 @@ const MyCart = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Bistro Boss | My Cart</title>
+        <title>Music Guru | My Cart</title>
       </Helmet>
 
       <div className="font-semibold h-[60px] flex justify-evenly items-center uppercase w-full">
@@ -82,7 +82,7 @@ const MyCart = () => {
           <td>
             {item.className}
           </td>
-          <td className="">$ {item?.coursePrice}</td>
+          <td className=""> {item?.coursePrice}</td>
           <td>
           <button className="btn btn-warning btn-sm">PAY</button>
           </td>

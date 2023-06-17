@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
 
+
 const SignUp = () => {
   const {
     register,
@@ -15,6 +16,7 @@ const SignUp = () => {
   } = useForm();
   const { createUser, updateUserProfile } = useAuth();
   const navigate = useNavigate();
+  
 
   const onSubmit = (data) => {
     createUser(data.email, data.password).then((result) => {
@@ -35,6 +37,7 @@ const SignUp = () => {
             .then((data) => {
               if (data.insertedId) {
                 reset();
+                
                 Swal.fire({
                   position: "top-end",
                   icon: "success",

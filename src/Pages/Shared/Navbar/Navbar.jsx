@@ -25,7 +25,7 @@ const Navbar = () => {
         <li>
           <Link to='/dashboard/mycart'>
           <div className="indicator">
-            <span className="indicator-item badge badge-secondary">{cart?.length || 0}+</span> 
+            <span className="indicator-item badge badge-secondary">+{cart?.length || 0}</span> 
             <button className="btn">
               <FaShoppingCart></FaShoppingCart>
             </button>
