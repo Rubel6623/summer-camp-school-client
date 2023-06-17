@@ -1,20 +1,21 @@
 /* eslint-disable no-unused-vars */
 import { useQuery } from '@tanstack/react-query'
-
 import useAuth from './useAuth';
+import useAxiosSecure from './useAxiosSecure';
 
 const useCart =()=>{
   const {user,loading}=useAuth();
   const token=localStorage.getItem('access-token');
-  // const [axiosSecure]=useAxiosSecure();
+  const [axiosSecure]=useAxiosSecure();
 
   const {refetch, data: cart=[] } = useQuery({
     queryKey: ['cart', user?.email],
+    enabled:!loading,
 
     queryFn: async ()=>{
-      const res = await fetch(`http://localhost:5000/myClasses?email=${user.email}`)
+      const res = await axiosSecure(`/myClasses?email=${user.email}`)
       console.log('response from axios ',res)
-      return res.json();
+      return res.data;
     },
 
   })
