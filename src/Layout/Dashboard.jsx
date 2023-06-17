@@ -11,12 +11,14 @@ import { FiMenu } from "react-icons/fi";
 import { FcReadingEbook } from "react-icons/fc";
 import useCart from "../hooks/useCart";
 import { SiGoogleclassroom } from "react-icons/si";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
   const [cart] = useCart();
 
-  const isAdmin = true;
-  const isInstructors = false;
+  const [isAdmin ]= useAdmin();
+  const [isInstructor] = useInstructor();
 
   return (
     <div className="drawer lg:drawer-open">
@@ -35,9 +37,9 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full text-base-content">
           {/* Sidebar content here */}
-          {isAdmin || isInstructors ? (
+          {isAdmin || isInstructor ? (
             <>
-              {isInstructors ? (
+              { isInstructor ? (
                 <>
                   <li>
                     <NavLink to="/dashboard/home">
