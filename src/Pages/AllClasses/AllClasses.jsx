@@ -3,6 +3,7 @@ import useClasses from "../../hooks/useClasses";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
+import useCart from "../../hooks/useCart";
 
 
 const AllClasses = () => {
@@ -10,6 +11,7 @@ const AllClasses = () => {
   const {user}=useAuth();
   const navigate=useNavigate();
   const location=useLocation();
+  const [,refetch]=useCart();
 
   const handleSelect=(selectedClass)=>{
     console.log(selectedClass);
@@ -32,6 +34,7 @@ const AllClasses = () => {
       .then(res=>res.json())
       .then(data=>{
         if(data.insertedId){
+          refetch();
           Swal.fire({
             position: 'top-end',
             icon: 'success',
