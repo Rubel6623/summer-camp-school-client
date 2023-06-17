@@ -24,7 +24,7 @@ const AllClasses = () => {
         coursePrice:selectedClass.coursePrice,
         email:user.email
       }
-      fetch('http://localhost:5000/myClasses',{
+      fetch('https://summer-camp-school-server-xi-blond.vercel.app/myClasses',{
         method:'POST',
         headers:{
           'content-type':'application/json'

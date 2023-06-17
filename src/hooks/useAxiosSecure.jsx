@@ -10,7 +10,7 @@ const useAxiosSecure = () => {
   const { logOut } = useAuth();
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000', // Replace with your base URL
+    baseURL: 'https://summer-camp-school-server-xi-blond.vercel.app', // Replace with your base URL
   });
 
   useEffect(() => {
