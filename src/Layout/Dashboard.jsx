@@ -47,7 +47,7 @@ const Dashboard = () => {
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/dashboard/reservations">
+                    <NavLink to="/dashboard/addClass">
                       <SiGoogleclassroom className="text-2xl"></SiGoogleclassroom>
                       Add Class
                     </NavLink>

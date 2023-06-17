@@ -10,6 +10,7 @@ import Login from "../Pages/Login/Login";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -28,7 +29,7 @@ import PrivateRoute from "./PrivateRoute";
       },
       {
         path:'/classes',
-        element:<AllClasses></AllClasses>
+        element:<PrivateRoute><AllClasses></AllClasses></PrivateRoute>
       },
       {
         path:"/login",
@@ -50,7 +51,11 @@ import PrivateRoute from "./PrivateRoute";
       },
       {
         path:'allUsers',
-        element:<AllUsers></AllUsers>
+        element:<PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+      },
+      {
+        path:'addClass',
+        element:<PrivateRoute><AddClass></AddClass></PrivateRoute>
       }
     ]
   }
